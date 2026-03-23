@@ -3,75 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Advanced Layout</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header>
-        <h1>My Website</h1>
-    </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
+<header>
+    <h1>My Dashboard</h1>
+</header>
 
-     <section class="content">
-        <h2>Welcome</h2>
-        <p>This is a simple HTML + CSS template.</p>
-    </section>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Settings</a>
+</nav>
 
-    <footer>
-        <p>© 2026 My Website</p>
-    </footer>
+<section class="content">
 
-    <style>
-        body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
+    <h2>Status Overview</h2>
 
-header {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
+    <div class="card-container">
+        <div class="card safe">
+            <h3>Safe</h3>
+            <p>Everything is normal</p>
+        </div>
 
-nav {
-    background: #555;
-    padding: 10px;
-    text-align: center;
-}
+        <div class="card warning">
+            <h3>Warning</h3>
+            <p>Gas level rising</p>
+        </div>
 
-nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        <div class="card danger">
+            <h3>Danger</h3>
+            <p>High gas detected!</p>
+        </div>
+    </div>
 
-nav a:hover {
-    color: yellow;
-}
+    <button class="btn">Start Monitoring</button>
 
-.content {
-    padding: 20px;
-    text-align: center;
-}
+</section>
 
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-    </style>
+<footer>
+    <p>© 2026 My Dashboard</p>
+</footer>
 
 </body>
 </html>
