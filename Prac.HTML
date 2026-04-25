@@ -30,36 +30,41 @@
     <div id="display">0</div>
 
     <button onclick="add1()">+1</button>
-    <button onclick="add5()">+5</button>
-    <button onclick="minus1()">-1</button>
+    <button onclick="result()">Even / Odd</button>
     <button onclick="reset()">Reset</button>
 
     <script>
 
         let count = 0;
 
-        function updateDisplay() {
-            document.getElementById("display").innerText = count;
+        // updates number display
+        function showNumber() {
+            let display = document.getElementById("display");
+            display.innerText = count;
+            display.style.color = "black";
+        }
+
+        // shows even or odd
+        function result() {
+            let display = document.getElementById("display");
+
+            if (count % 2 === 0) {
+                display.innerText = count + " is Even";
+                display.style.color = "blue";
+            } else {
+                display.innerText = count + " is Odd";
+                display.style.color = "red";
+            }
         }
 
         function add1() {
             count++;
-            updateDisplay();
-        }
-
-        function add5() {
-            count += 5;
-            updateDisplay();
-        }
-
-        function minus1() {
-            count--;
-            updateDisplay();
+            showNumber();
         }
 
         function reset() {
             count = 0;
-            updateDisplay();
+            showNumber();
         }
 
     </script>
