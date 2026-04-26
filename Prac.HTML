@@ -4,6 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .btn1{
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input{
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .btn2{
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn3{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 <body>
     <p>Please subscribe to my channel</p>
@@ -12,6 +48,11 @@
 
     <button class = "btn1" onclick="sub()">subscribe</button>
 
+    <input type="text" id="myinput" placeholder="please enter something">
+
+    <button class = "btn2" onclick="detail()">ENTER</button>
+
+    <button class = "btn3" onclick="remove()">Delete</button>
     <script>
         
         function sub(){
@@ -24,6 +65,16 @@
             else{
                 sub.innerHTML = "subscribe";
             }
+        }
+
+        function detail(){
+            let doc = document.getElementById("myinput").value;
+            document.getElementById("mydiv").innerHTML = doc;
+        }        
+
+        function remove(){
+            let rm = document.getElementById("mydiv").value;
+            document.getElementById("mydiv").innerHTML = "";
         }
 
     </script>
