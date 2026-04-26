@@ -4,37 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <Style>
-        .btn1{
-            background-color: red;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-    </Style>
-
 </head>
 <body>
-    
-    <p>PLEASE SUBSCRIBE TO MY CHANNEL</p>
+    <p>Please subscribe to my channel</p>
 
-    <button class="btn1" onclick="sub()">Subscribe</button>
+    <div id = "mydiv"></div>
+
+    <button class = "btn1" onclick="sub()">subscribe</button>
 
     <script>
-
-        let click = document.querySelector(".btn1");
-
         
         function sub(){
-            if(click.innerHTML === "Subscribe"){
-                click.innerHTML = "Subscribed";
-            }else{
-                click.innerHTML = "Subscribe";
-            }click.style.backgroundColor = "green";
+
+            let sub = document.querySelector(".btn1");
+
+            if(sub.innerHTML === "subscribe"){
+                sub.innerHTML = "subscribed";
+            }
+            else{
+                sub.innerHTML = "subscribe";
+            }
         }
 
     </script>
