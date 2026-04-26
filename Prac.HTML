@@ -28,17 +28,17 @@ function sub() {
 
 function detail() {
 
-    let input = document.getElementbyId("myinput").value;
+    let input = document.getElementById("myinput").value;
     let value = input.value.trim();
 
     if(value === ""){
         alert("please input something");
     }
 
-    let p = createElemnt("p");
+    let p = createElement("p");
     p.textContent = value;
 
-    document.getElementById("mydiv").appendChild("p");
+    document.getElementById("mydiv").appendChild(p);
     input.value = "";
 
 }
