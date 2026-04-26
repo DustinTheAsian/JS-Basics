@@ -32,61 +32,57 @@
     <button onclick="add1()">+1</button>
     <button onclick="sub1()">-1</button>
     <button onclick="result()">Even / Odd</button>
-    <button onclick="reset()">Reset</button>
     <button onclick="status()">Status</button>
+    <button onclick="reset()">Reset</button>
 
     <script>
 
         let count = 0;
 
-        // updates number display
-        function showNumber() {
+        // updates display (main function to avoid repetition)
+        function updateDisplay(text = count, color = "black") {
             let display = document.getElementById("display");
-            display.innerText = count;
-        }
-
-        // shows even or odd
-        function result() {
-            let display = document.getElementById("display");
-
-            if (count % 2 === 0) {
-                 display.innerText = count + " is Even";
-                display.style.color = "blue";
-            } else {
-                display.innerText = count + " is Odd";
-                display.style.color = "red";
-            }
+            display.innerText = text;
+            display.style.color = color;
         }
 
         function add1() {
             count++;
-            showNumber();
+            updateDisplay();
+        }
+
+        function sub1() {
+            count--;
+            updateDisplay();
         }
 
         function reset() {
             count = 0;
-            showNumber();
-            display = document.getElementById("display").style.color = "black";
+            updateDisplay();
         }
 
+        function result() {
+            if (count % 2 === 0) {
+                updateDisplay(count + " is Even", "blue");
+            } else {
+                updateDisplay(count + " is Odd", "red");
+            }
+        }
 
-        function status(){
-            if(count < 0){
-                display = document.getElementById("display").style.color = "red";
-            }else if (count > 0 && count <= 10){
-                display = document.getElementById("display").style.color = "blue";
-        }else if (count > 10 && count <=15){
-            display = document.getElementById("display").style.color = "yellow";
-        }else if (count > 15 && count <= 20){
-            display = document.getElementById("display").style.color = "green";
-    }
-}
+        function status() {
+            if (count < 0) {
+                updateDisplay(count + " is Negative", "red");
 
+            } else if (count <= 10) {
+                updateDisplay(count + " is Low", "blue");
 
-    function sub1(){
-        count--;
-        showNumber();
-    }
+            } else if (count <= 15) {
+                updateDisplay(count + " is Medium", "yellow");
+
+            } else {
+                updateDisplay(count + " is High", "green");
+            }
+        }
 
     </script>
 
