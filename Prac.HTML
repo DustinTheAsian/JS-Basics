@@ -30,8 +30,10 @@
     <div id="display">0</div>
 
     <button onclick="add1()">+1</button>
+    <button onclick="sub1()">-1</button>
     <button onclick="result()">Even / Odd</button>
     <button onclick="reset()">Reset</button>
+    <button onclick="status()">Status</button>
 
     <script>
 
@@ -41,7 +43,6 @@
         function showNumber() {
             let display = document.getElementById("display");
             display.innerText = count;
-            display.style.color = "black";
         }
 
         // shows even or odd
@@ -49,7 +50,7 @@
             let display = document.getElementById("display");
 
             if (count % 2 === 0) {
-                display.innerText = count + " is Even";
+                 display.innerText = count + " is Even";
                 display.style.color = "blue";
             } else {
                 display.innerText = count + " is Odd";
@@ -65,7 +66,27 @@
         function reset() {
             count = 0;
             showNumber();
+            display = document.getElementById("display").style.color = "black";
         }
+
+
+        function status(){
+            if(count < 0){
+                display = document.getElementById("display").style.color = "red";
+            }else if (count > 0 && count <= 10){
+                display = document.getElementById("display").style.color = "blue";
+        }else if (count > 10 && count <=15){
+            display = document.getElementById("display").style.color = "yellow";
+        }else if (count > 15 && count <= 20){
+            display = document.getElementById("display").style.color = "green";
+    }
+}
+
+
+    function sub1(){
+        count--;
+        showNumber();
+    }
 
     </script>
 
