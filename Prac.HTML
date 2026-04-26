@@ -2,86 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Counter App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        #display {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            font-size: 20px;
-            margin: 5px;
+    <Style>
+        .btn1{
+            background-color: red;
+            color: white;
             padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
-    </style>
+
+    </Style>
+
 </head>
-
 <body>
+    
+    <p>PLEASE SUBSCRIBE TO MY CHANNEL</p>
 
-    <div id="display">0</div>
-
-    <button onclick="add1()">+1</button>
-    <button onclick="sub1()">-1</button>
-    <button onclick="result()">Even / Odd</button>
-    <button onclick="status()">Status</button>
-    <button onclick="reset()">Reset</button>
+    <button class="btn1" onclick="sub()">Subscribe</button>
 
     <script>
 
-        let count = 0;
+        let click = document.querySelector(".btn1");
 
-        // updates display (main function to avoid repetition)
-        function updateDisplay(text = count, color = "black") {
-            let display = document.getElementById("display");
-            display.innerText = text;
-            display.style.color = color;
-        }
-
-        function add1() {
-            count++;
-            updateDisplay();
-        }
-
-        function sub1() {
-            count--;
-            updateDisplay();
-        }
-
-        function reset() {
-            count = 0;
-            updateDisplay();
-        }
-
-        function result() {
-            if (count % 2 === 0) {
-                updateDisplay(count + " is Even", "blue");
-            } else {
-                updateDisplay(count + " is Odd", "red");
-            }
-        }
-
-        function status() {
-            if (count < 0) {
-                updateDisplay(count + " is Negative", "red");
-
-            } else if (count <= 10) {
-                updateDisplay(count + " is Low", "blue");
-
-            } else if (count <= 15) {
-                updateDisplay(count + " is Medium", "yellow");
-
-            } else {
-                updateDisplay(count + " is High", "green");
-            }
+        
+        function sub(){
+            if(click.innerHTML === "Subscribe"){
+                click.innerHTML = "Subscribed";
+            }else{
+                click.innerHTML = "Subscribe";
+            }click.style.backgroundColor = "green";
         }
 
     </script>
