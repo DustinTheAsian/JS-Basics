@@ -11,6 +11,7 @@
     
     <div id = "mydiv"></div>
     <button onclick="add()">click me</button>
+    <button onclick="non()">clear</button>
 
     <input type = "text" id = "myinput">
 
@@ -29,6 +30,14 @@
             p.textContent = count + ". " + input.value;
             div.appendChild(p);
             input.value = "";
+
+        }
+
+        function non(){
+            let div = document.getElementById("mydiv");
+            div.innerHTML = "";
+            
+            
         }
 
     </script>
