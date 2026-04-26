@@ -1,55 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
 
-<p>Please subscribe to my channel</p>
+    <p>add items</p>
+    
+    <div id = "mydiv"></div>
+    <button onclick="add()">click me</button>
 
-<div id="mydiv"></div>
-
-<button onclick="sub()" id="subBtn">subscribe</button>
-
-<input type="text" id="myinput" placeholder="please enter something">
-<button onclick="detail()">ENTER</button>
-<button onclick="removeAll()">Delete All</button>
-
-<script>
-
-function sub() {
-    let btn = document.getElementById("subBtn");
-
-    if (btn.innerHTML === "subscribe") {
-        btn.innerHTML = "subscribed";
-        btn.style.backgroundColor = "gray";
-    } else {
-        btn.innerHTML = "subscribe";
-        btn.style.backgroundColor = "red";
-    }
-}
-
-function detail() {
-
-    let input = document.getElementById("myinput").value;
-    let value = input.value.trim();
-
-    if(value === ""){
-        alert("please input something");
-    }
-
-    let p = createElement("p");
-    p.textContent = value;
-
-    document.getElementById("mydiv").appendChild(p);
-    input.value = "";
-
-}
-
-function removeAll() {
-    let div = document.getElementById("mydiv");
-    div.innerHTML = "";
-}
+    <input type = "text" id = "myinput">
 
 
-</script>
+    <script>
+
+        let count = 0;
+
+        function add(){
+            let input = document.getElementById("myinput");
+            let div = document.getElementById("mydiv");
+            let p = document.createElement("p");
+
+            count++;
+
+            p.textContent = count + ". " + input.value;
+            div.appendChild(p);
+            input.value = "";
+        }
+
+    </script>
 
 </body>
 </html>
