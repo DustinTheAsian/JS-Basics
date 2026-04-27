@@ -18,26 +18,36 @@
 
     <script>
 
-        let count = 0;
+let count = 0;
 
-        function add(){
-            
-            let text = document.getElementById("myinput").value;
-            let div = document.getElementById("mydiv");
-            let p = document.createElement("p");
-            p.textContent = "";
+function add(){
+    let input = document.getElementById("myinput");
+    let div = document.getElementById("mydiv");
 
-            count ++;
+    let value = input.value.trim();
 
-        }
+    if(value === ""){
+        alert("Please enter a value");
+        return;
+    }
 
-        function non(){
-            let div = document.getElementById("mydiv");
-            div.innerHTML = "";
-            
-        }
+    count++;
 
-    </script>
+    let p = document.createElement("p");
+    p.textContent = count + ". " + value;
+
+    div.appendChild(p);
+
+    input.value = "";
+
+}
+
+function non(){
+    let div = document.getElementById("mydiv");
+    div.innerHTML = "";
+}
+
+</script>
 
 </body>
 </html>
