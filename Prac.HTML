@@ -32,6 +32,7 @@
     <button class="btn" onclick="changeText()">Click Me</button>
     
      <button class="btn" onclick="Plus()">ADD</button>
+     <button class="btn" onclick="del()">SUBTRACT</button>
     <script>
         
         let num = 0;
@@ -44,9 +45,16 @@
         function changeText(){
             if (num % 2 === 0){
                 document.getElementById("text").innerHTML = "Its Even";
+                document.getElementById("text").style.color = "green";
             }else{
                 document.getElementById("text").innerHTML = "Its Odd";
+                document.getElementById("text").style.color = "red";
             }
+        }
+
+        function del(){
+            num--;
+            document.getElementById("number").innerHTML = num;
         }
     </script>
 
