@@ -24,12 +24,34 @@
 
 </head>
 <body>
+
+    <div id="mydiv"></div>
     
     <p>please enter task</p>
 
-    <button class="btn" onclick="hey">ADD</button>
+    <button class="btn" onclick="hey()">ADD</button>
 
     <input id = "myinput" class ="form-control" type="text" placeholder="ENTER SOMETHING"> 
+
+    <script>
+
+        let count = 0;
+
+        function hey(){
+            let input = document.getElementById("myinput");
+            let div = document.getElementById("mydiv");
+
+            let value = input.value;
+
+            count++;
+
+            let p = createElement("p");
+            p.textContent = count + ". " + value;
+
+            div.appendChild(p);
+        }
+
+    </script>
 
 </body>
 </html>
