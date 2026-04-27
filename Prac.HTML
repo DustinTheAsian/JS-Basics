@@ -3,55 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Change Text Example</title>
+
     <style>
-    .btn{
-        background-color: black;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-    }
-    .form-control{
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-
-    </style>
-
-</head>
-<body>
-    
-    <p>please enter task</p>
-
-    <div id="mydiv"></div>
-
-    <button class="btn" onclick="hey()">ADD</button>
-
-    <input id = "myinput" class ="form-control" type="text" placeholder="ENTER SOMETHING"> 
-
-    <script>
-
-        let count = 0;
-
-        function hey(){
-            let input = document.getElementById("myinput");
-            let div = document.getElementById("mydiv");
-
-            let value = input.value;
-
-            count++;
-
-            let p = document.createElement("p");
-            p.textContent = count + ". " + value;
-
-            div.appendChild(p);
-            input.value = "";
+        body{
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
         }
 
+        .btn{
+            padding: 10px 20px;
+            border: none;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <p id="text">WHAT IS THIS?</p>
+
+    <p id="number">0</p>
+
+    <button class="btn" onclick="changeText()">Click Me</button>
+    
+     <button class="btn" onclick="Plus()">ADD</button>
+    <script>
+        
+        let num = 0;
+
+        function Plus(){
+            num++;
+            document.getElementById("number").innerHTML = num;
+        }
+
+        function changeText(){
+            if (num % 2 === 0){
+                document.getElementById("text").innerHTML = "Its Even";
+            }else{
+                document.getElementById("text").innerHTML = "Its Odd";
+            }
+        }
     </script>
 
 </body>
