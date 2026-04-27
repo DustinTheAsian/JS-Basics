@@ -21,22 +21,19 @@
         let count = 0;
 
         function add(){
-            let input = document.getElementById("myinput");
+            
+            let text = document.getElementById("myinput").value;
             let div = document.getElementById("mydiv");
             let p = document.createElement("p");
+            p.textContent = "";
 
-            count++;
-
-            p.textContent = count + ". " + input.value;
-            div.appendChild(p);
-            input.value = "";
+            count ++;
 
         }
 
         function non(){
             let div = document.getElementById("mydiv");
             div.innerHTML = "";
-            
             
         }
 
