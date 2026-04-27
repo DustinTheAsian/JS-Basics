@@ -38,24 +38,27 @@
         let num = 0;
 
         function Plus(){
+            
             num++;
             document.getElementById("number").innerHTML = num;
         }
 
+        function del(){
+            
+            num--;
+            document.getElementById("number").innerHTML = num;
+        }
+
         function changeText(){
-            if (num % 2 === 0){
-                document.getElementById("text").innerHTML = "Its Even";
+            if(num %2 === 0){
+                document.getElementById("text").innerHTML = "EVEN NUMBER";
                 document.getElementById("text").style.color = "green";
-            }else{
-                document.getElementById("text").innerHTML = "Its Odd";
+            } else {
+                document.getElementById("text").innerHTML = "ODD NUMBER";
                 document.getElementById("text").style.color = "red";
             }
         }
 
-        function del(){
-            num--;
-            document.getElementById("number").innerHTML = num;
-        }
     </script>
 
 </body>
