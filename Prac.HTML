@@ -6,48 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-
-    <p>add items</p>
     
-    <div id = "mydiv"></div>
-    <button onclick="add()">click me</button>
-    <button onclick="non()">clear</button>
-
-    <input type = "text" id = "myinput">
-
-
-    <script>
-
-let count = 0;
-
-function add(){
-    let input = document.getElementById("myinput");
-    let div = document.getElementById("mydiv");
-
-    let value = input.value.trim();
-
-    if(value === ""){
-        alert("Please enter a value");
-        return;
-    }
-
-    count++;
-
-    let p = document.createElement("p");
-    p.textContent = count + ". " + value;
-
-    div.appendChild(p);
-
-    input.value = "";
-
-}
-
-function non(){
-    let div = document.getElementById("mydiv");
-    div.innerHTML = "";
-}
-
-</script>
-
 </body>
 </html>
