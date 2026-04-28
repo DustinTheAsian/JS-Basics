@@ -37,14 +37,22 @@ function verify(){
     let input = document.getElementById("myinput");
     let val = input.value;
 
-    if(val % 2 === 0){
-        document.getElementById("text").innerHTML = "EVEN";
+
+    if( val === ""){
+        alert("Please enter a number");
+        return;
+    }
+    
+    if(val > 0){
+        document.getElementById("text").innerHTML = "POSITIVE";
+    }
+    else if (val === 0){
+        document.getElementById("text").innerHTML = "ZERO";
     }
     else{
-        document.getElementById("text").innerHTML = "ODD";
+        document.getElementById("text").innerHTML = "NEGATIVE";
     }
-
-}
+}   
 </script>
 
     </body>
