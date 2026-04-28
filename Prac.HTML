@@ -1,63 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change Text Example</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Change Text Example</title>
 
-    <style>
-        body{
-            font-family: Arial;
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        .btn{
-            padding: 10px 20px;
-            border: none;
-            background-color: black;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-
-
-
-    <p id="text">WHAT IS THIS?</p>
-
-    <p id="number">0</p>
-
-    <button class="btn" onclick="changeText()">Click Me</button>
-    
-     <button class="btn" onclick="Plus()">ADD</button>
-     <button class="btn" onclick="del()">SUBTRACT</button>
-    <script>
-        
-        let num = 0;
-
-        function Plus(){
-            num++;
-            document.getElementById('number').innerHTML = num;
-        }
-    
-          function del(){
-            num--;
-            document.getElementById('number').innerHTML = num;
-        }
-
-        function changeText(){
-            if(num % 2 === 0){
-                document.getElementById('text').innerHTML = "EVEN NUMBER";
-                document.getElementById('text').style.color = "green";
-            } else {
-                document.getElementById('text').innerHTML = "ODD NUMBER";
-                document.getElementById('text').style.color = "red";
+        <style>
+            body{
+                font-family: Arial;
+                text-align: center;
+                margin-top: 100px;
             }
-        }
 
-    </script>
+            .btn{
+                padding: 10px 20px;
+                border: none;
+                background-color: black;
+                color: white;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
 
-</body>
-</html>
+
+
+        <p id="text">WHAT IS THIS?</p>
+
+        <input id="myinput" type="text" placeholder="Enter Digit">
+
+        <button class="btn" onclick="verify()">Click Me</button>
+        
+ <script>
+function verify(){
+
+    let input = document.getElementById("myinput");
+    let val = input.value;
+
+    if(val % 2 === 0){
+        document.getElementById("text").innerHTML = "EVEN";
+    }
+    else{
+        document.getElementById("text").innerHTML = "ODD";
+    }
+
+}
+</script>
+
+    </body>
+    </html>
