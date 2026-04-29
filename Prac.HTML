@@ -32,24 +32,23 @@
 
         function hey(){
             let input = document.getElementById("myInput");
-            let val = input.value;
+           let val = Number(input.value);
 
-
-            if (val === ""){
-                document.getElementById("parag").innerHTML = "Please enter a number";
-                return;
+            if (val > 20){
+                document.getElementById("parag").innerHTML = "number is greatest";
             }
-
-            if (val > 10) {
+            else if (val > 10) {
                 document.getElementById("parag").innerHTML = "number is greater than 10";
             }
-             else if (val < 10) {
+            else if (val < 0) {
+                document.getElementById("parag").innerHTML = "what the fuck is this?";
+            }
+            else if (val < 10) {
                 document.getElementById("parag").innerHTML = "number is less than 10";
             }
-             else {
+            else {
                 document.getElementById("parag").innerHTML = "number is equal to 10";
-            }
-
+}
         }
 
     </script>
