@@ -1,59 +1,58 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Change Text Example</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-        <style>
-            body{
-                font-family: Arial;
-                text-align: center;
-                margin-top: 100px;
-            }
-
-            .btn{
+    <Style>
+        .btn-primary{
+            background-color: rgb(0, 0, 0);
+            color: white;
                 padding: 10px 20px;
                 border: none;
-                background-color: black;
-                color: white;
                 cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
+        }
 
+        .form-control{
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+    </Style>
 
+</head>
+<body>
 
-        <p id="text">WHAT IS THIS?</p>
-
-        <input id="myinput" type="text" placeholder="Enter Digit">
-
-        <button class="btn" onclick="verify()">Click Me</button>
-        
- <script>
-function verify(){
-
-    let input = document.getElementById("myinput");
-    let val = input.value;
-
-
-    if( val === ""){
-        alert("Please enter a number");
-        return;
-    }
+    <p id = "parag">Hello, World!</p>
     
-    if(val > 0){
-        document.getElementById("text").innerHTML = "POSITIVE";
-    }
-    else if (val === 0){
-        document.getElementById("text").innerHTML = "ZERO";
-    }
-    else{
-        document.getElementById("text").innerHTML = "NEGATIVE";
-    }
-}   
-</script>
+    <input class = "form-control" id = "myInput" type = text placeholder="Enter Number">
+    <button class = "btn-primary" onclick = "hey()">click Me</button>
 
-    </body>
-    </html>
+    <script>
+
+        function hey(){
+            let input = document.getElementById("myInput");
+            let val = input.value;
+
+
+            if (val === ""){
+                document.getElementById("parag").innerHTML = "Please enter a number";
+                return;
+            }
+
+            if (val > 10) {
+                document.getElementById("parag").innerHTML = "number is greater than 10";
+            }
+             else if (val < 10) {
+                document.getElementById("parag").innerHTML = "number is less than 10";
+            }
+             else {
+                document.getElementById("parag").innerHTML = "number is equal to 10";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
