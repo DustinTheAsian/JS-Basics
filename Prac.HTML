@@ -47,6 +47,28 @@ li {
         <ul id="taskList"></ul>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        const addBtn = document.getElementById("addBtn");
+const input = document.getElementById("taskInput");
+const list = document.getElementById("taskList");
+
+addBtn.addEventListener("click", addTask);
+
+function addTask() {
+    const task = input.value.trim();
+
+    if (task === "") return;
+
+    const li = document.createElement("li");
+    li.textContent = task;
+
+    li.addEventListener("click", () => {
+        li.style.textDecoration = "line-through";
+    });
+
+    list.appendChild(li);
+    input.value = "";
+}
+    </script>
 </body>
 </html>
