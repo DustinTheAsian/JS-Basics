@@ -39,10 +39,63 @@ button:hover {
     <button onclick="changeText()">Click Me</button>
 </div>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Counter App</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="count">0</h1>
+
+<button onclick="increase()">+</button>
+<button onclick="decrease()">-</button>
+<button onclick="reset()">Reset</button>
+
 <script>
-function changeText() {
-    document.querySelector("p").innerText = "You just changed the text 😎";
+let count = 0;
+
+function updateDisplay() {
+    document.getElementById("count").innerText = count;
+}
+
+function increase() {
+    count++;
+    updateDisplay();
+}
+
+function decrease() {
+    count--;
+    updateDisplay();
+}
+
+function reset() {
+    count = 0;
+    updateDisplay();
 }
 </script>
+
+</body>
+</html>
 </body>
 </html>
