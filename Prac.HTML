@@ -4,54 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <Style>
-        .btn-primary{
-            background-color: rgb(0, 0, 0);
-            color: white;
-                padding: 10px 20px;
-                border: none;
-                cursor: pointer;
-        }
-
-        .form-control{
-            border: 1px solid #ccc;
-            padding: 8px;
-        }
-    </Style>
-
 </head>
 <body>
-
-    <p id = "parag">Hello, World!</p>
     
-    <input class = "form-control" id = "myInput" type = text placeholder="Enter Number">
-    <button class = "btn-primary" onclick = "hey()">click Me</button>
-
-    <script>
-
-        function hey(){
-            let input = document.getElementById("myInput");
-           let val = Number(input.value);
-
-            if (val > 20){
-                document.getElementById("parag").innerHTML = "number is greatest";
-            }
-            else if (val > 10) {
-                document.getElementById("parag").innerHTML = "number is greater than 10";
-            }
-            else if (val < 0) {
-                document.getElementById("parag").innerHTML = "what the fuck is this?";
-            }
-            else if (val < 10) {
-                document.getElementById("parag").innerHTML = "number is less than 10";
-            }
-            else {
-                document.getElementById("parag").innerHTML = "number is equal to 10";
-}
-        }
-
-    </script>
-
 </body>
 </html>
