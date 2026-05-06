@@ -22,6 +22,12 @@
                 let value = input.value;
 
                 parag.innerHTML = value; // <-- this updates the text
+
+                if (value === ""){
+                    alert('Please Enter Something');
+                }else if(value === "Hello"){
+                    document.getElementById("parag").style.color = "Red";
+                }
             }
 
         </script>
