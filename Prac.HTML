@@ -1,25 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<>
-    
-    <p id="parag">Change Me Please</p>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <p id="parag">Change Me Please</p>
 
-    <input type=" text" id="input" placeholder="Type Something..."></input>
+        <input type=" text" id="input" placeholder="Type Something..."></input>
 
-    <button class="yoButton" onclick="clickMe()">CHANGE</button>
+        <button class="yoButton" onclick="clickMe()">CHANGE</button>
 
-    <script>
+        <script>
 
-        function clickMe(){
-            let input= document.getElementById("input");
-        }
+            function clickMe(){
+                let input= document.getElementById("input");
+                let parag= document.getElementById("parag");
 
-    </script>
+                let value = input.value;
 
-</body>
-</html>
+                parag.innerHTML = value; // <-- this updates the text
+            }
+
+        </script>
+
+    </body>
+    </html>
