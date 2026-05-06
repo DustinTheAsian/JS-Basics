@@ -1,36 +1,68 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        
-        <p id="parag">Change Me Please</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
 
-        <input type=" text" id="input" placeholder="Type Something..."></input>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
 
-        <button class="yoButton" onclick="clickMe()">CHANGE</button>
+        input {
+            padding: 10px;
+            width: 200px;
+        }
 
-        <script>
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
 
-            function clickMe(){
-                let input= document.getElementById("input");
-                let parag= document.getElementById("parag");
+        li {
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
 
-                let value = input.value;
+    <h2>My To-Do List</h2>
 
-                parag.innerHTML = value; // <-- this updates the text
+    <input type="text" id="input" placeholder="Add a task...">
+    <button onclick="addTask()">ADD</button>
 
-                if (value === ""){
-                    alert('Please Enter Something');
-                }else if(value === "Hello"){
-                    document.getElementById("parag").style.color = "Red";
-                }
+    <ul id="list"></ul>
+
+    <script>
+        function addTask(){
+            let input = document.getElementById("input");
+            let list = document.getElementById("list");
+
+            let value = input.value;
+
+            if(value === ""){
+                alert("Type something first");
+                return;
             }
 
-        </script>
+            // create new list item
+            let li = document.createElement("li");
+            li.textContent = value;
 
-    </body>
-    </html>
+            // click to remove
+            li.onclick = function(){
+                li.remove();
+            }
+
+            list.appendChild(li);
+
+            input.value = ""; // clear input
+        }
+    </script>
+
+</body>
+</html>
