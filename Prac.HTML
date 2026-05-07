@@ -6,10 +6,35 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h1 id = "parag">HEY CHANGE ME!</h1>
     
     <input id = "enter" type="text" placeholder="Type Something">
 
     <button onclick= "push()">Click</button>
+
+    <script>
+
+        function push(){
+
+            let p = document.getElementById("parag");
+            let input = document.getElementById("enter");
+            
+            let value = input.value;
+
+            if(value === ""){
+                alert('hey input something');
+                return;
+            }
+            
+            p.innerHTML = value;
+            p.style.color = "red";  
+
+            
+
+        }
+
+    </script>
 
 </body>
 </html>
