@@ -4,12 +4,18 @@ body{
 
 .Blannk{
     height: 50px;
-    width: 98.8%;
+    width: 98%;
 }
 
 
 .numbers{
-    padding: 20px;
+    background-color: gray;
+
+    height: 80%;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5px;
+    padding-top: 50px;
+    padding: 10px;
 }
 
 .num-design{
@@ -21,9 +27,11 @@ body{
 }
 
 .Container{
+    display: flex;
+    flex-direction: column;
     margin-top: 50px;
     margin-left: 25%;
     height: 50vh;
-    width: 40%;
+    width: 20%;
     background-color: white;
 }
