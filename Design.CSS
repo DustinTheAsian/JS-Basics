@@ -2,11 +2,16 @@ body{
     background-color: black;
 }
 
+.Blannk{
+    border: solid;
+    height: 50px;
+     width: 98.8%;
+}
+
 .Container{
-    display: grid;
     margin-top: 50px;
     margin-left: 25%;
-    height: 30vh;
-    width: 50%;
+    height: 50vh;
+    width: 40%;
     background-color: white;
 }
