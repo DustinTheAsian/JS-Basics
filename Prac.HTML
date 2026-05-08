@@ -22,10 +22,28 @@
         <button onclick="six()" class="num-design" id="6">6</button>
         <button onclick="seven()" class="num-design"id="7">7</button>
         <button onclick="eight()" class="num-design" id="8">8</button>
-        <button onclick="nine()" class="num-design" id="9">9</button
+        <button onclick="nine()" class="num-design" id="9">9</button>
     </div>
 
     </div>
+
+    <script>
+
+              let input = document.getElementById("input");
+
+        let buttons = document.querySelectorAll(".num-design");
+
+        buttons.forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                input.value += button.textContent;
+
+            });
+
+        });
+
+    </script>
 
 </body>
 </html>

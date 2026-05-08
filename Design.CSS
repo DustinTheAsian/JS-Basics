@@ -8,21 +8,22 @@ body{
 }
 
 
-.numbers{
+.numbers {
     background-color: gray;
+    display: grid;
 
-    height: 80%;
-    grid-template-columns: repeat(3,1fr);
-    gap: 5px;
-    padding-top: 50px;
-    padding: 10px;
+    grid-template-columns: repeat(3, 0.3fr);
+    
+
+    height: 85%;
+    padding: 2px;
 }
 
 .num-design{
     background-color: rgb(255, 166, 0);
     border: none;
-    height: 40px;
-    width: 50px;
+    height: 60px;
+    width: 70px;
     border-radius: 20px;
 }
 
