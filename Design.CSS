@@ -3,9 +3,14 @@ body{
 }
 
 .Blannk{
-    border: solid;
+    
     height: 50px;
-     width: 98.8%;
+    width: 98.8%;
+}
+
+
+.numbers{
+    padding: 20px;
 }
 
 .Container{
