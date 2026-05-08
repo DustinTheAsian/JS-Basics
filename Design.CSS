@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+}
+
+.Container{
+    display: grid;
+    margin-top: 50px;
+    margin-left: 25%;
+    height: 30vh;
+    width: 50%;
+    background-color: white;
+}
