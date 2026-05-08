@@ -3,7 +3,6 @@ body{
 }
 
 .Blannk{
-    
     height: 50px;
     width: 98.8%;
 }
@@ -11,6 +10,14 @@ body{
 
 .numbers{
     padding: 20px;
+}
+
+.num-design{
+    background-color: rgb(255, 166, 0);
+    border: none;
+    height: 40px;
+    width: 50px;
+    border-radius: 20px;
 }
 
 .Container{
