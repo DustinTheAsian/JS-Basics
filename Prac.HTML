@@ -10,26 +10,18 @@
     <div class="Container" id = "java-Container">
 
     <div class="Blan" id="Typing">
-        <input id="input" class="Blannk" type="text" placeholder="Enter Digit">
+        <input id="input" class="Blannk" type="text" placeholder="Enter Digit" readonly>
     </div>
 
     <div class="numbers" id="compute">
-        <button onclick="one()" class="num-design" id="1">1</button>
-        <button onclick="two()" class="num-design" id="2">2</button>
-        <button onclick="three()" class="num-design" id="3">3</button>
-        <button onclick="four()"  class="num-design"id="4">4</button>
-        <button onclick="five()" class="num-design" id="5">5</button>
-        <button onclick="six()" class="num-design" id="6">6</button>
-        <button onclick="seven()" class="num-design"id="7">7</button>
-        <button onclick="eight()" class="num-design" id="8">8</button>
-        <button onclick="nine()" class="num-design" id="9">9</button>
+        <button onclick="appendtoinput(1)">1</button>
     </div>
 
     </div>
 
     <script>
 
-              let input = document.getElementById("input");
+        let input = document.getElementById("input");
 
         let buttons = document.querySelectorAll(".num-design");
 
