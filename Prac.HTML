@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
+    
+    <h1 id="big-Text">change me</h1>
 
-<input id="firstInput" placeholder="Type here">
+    <input id="put" type="text" placeholder="Input Text">
 
-<button onclick="sendData()">Send</button>
+    <button onclick="verifydata()">Send</button>
 
-<input id="secondInput" placeholder="Will receive data">
+    <script>
 
-<script>
+        function verifydata(){
+            let dat = put.value;
 
-let firstInput = document.getElementById("firstInput");
-let secondInput = document.getElementById("secondInput");
+            let header = document.getElementById("big-Text");
 
-function sendData() {
+            if(dat === "hello"){
+                document.innerHTML("big-Text").style.color = 'red';
+            }
 
-    // get the value from first input
-    let data = firstInput.value;
+             header.textContent = dat;
 
-    // send it into second input
-    secondInput.value = data;
+             put.value = "";
 
-}
+            
 
-</script>
+        }
 
+    </script>
 </body>
 </html>
