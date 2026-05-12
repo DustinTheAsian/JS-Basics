@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="Design.css">
 </head>
 <body>
 
-    <h1 id="bigText">hello World</h1>
+    <div class="calculator">
 
-    <input id="first" type="text" placeholder="input something">
-    <button onclick = "changeText()">Change Text</button>
+        <input type="text" id="display" placeholder="0" readonly>
 
-    
-    <script>
+        <div class="buttons">
 
-        function changeText(){
-            let header = document.getElementById("bigText");
-            let input = document.getElementById("first");
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="append('/')">/</button>
+            <button class="operator" onclick="append('*')">*</button>
+            <button class="operator" onclick="append('-')">-</button>
 
-            header.textContent = input.value;
+            <button class="number" onclick="append('7')">7</button>
+            <button class="number" onclick="append('8')">8</button>
+            <button class="number" onclick="append('9')">9</button>
+            <button class="operator" onclick="append('+')">+</button>
 
-        }
+            <button class="number" onclick="append('4')">4</button>
+            <button class="number" onclick="append('5')">5</button>
+            <button class="number" onclick="append('6')">6</button>
+            <button class="number" onclick="append('.')">.</button>
 
-    </script>
-    
+            <button class="number" onclick="append('1')">1</button>
+            <button class="number" onclick="append('2')">2</button>
+            <button class="number" onclick="append('3')">3</button>
+            <button class="number" onclick="append('0')">0</button>
+
+            <button class="equal" onclick="calculate()">=</button>
+
+        </div>
+
+    </div>
+
 </body>
 </html>
