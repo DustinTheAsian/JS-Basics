@@ -1,1 +1,33 @@
-!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="header">Change Me</h1>
+
+    <input type="text" id="input" placeholder="Type something...">
+    <button id="changeButton">Change Header</button>
+    <input type="text" id="outcome" placeholder="Results...">
+
+    <script>
+
+        function changeButton(){
+
+    let header = document.getElementById("header");        
+    let input = document.getElementById("input");
+    let changeButton = document.getElementById("changeButton");
+    let outcome = document.getElementById("outcome");
+
+        header.textContent = input.value;
+
+        }
+
+   
+    </script>
+
+</body>
+</html>
