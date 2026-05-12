@@ -10,7 +10,7 @@
     <h1 id="header">Change Me</h1>
 
     <input type="text" id="input" placeholder="Type something...">
-    <button id="changeButton">Change Header</button>
+    <button onclick = "changeButton()" id="changeButton">Change Header</button>
     <input type="text" id="outcome" placeholder="Results...">
 
     <script>
@@ -23,6 +23,8 @@
     let outcome = document.getElementById("outcome");
 
         header.textContent = input.value;
+
+            outcome.value = input.value;
 
         }
 
