@@ -1,60 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<title>Advanced Header App</title>
+
+<style>
+body.dark {
+    background: #1e1e1e;
+    color: white;
+}
+
+button {
+    margin: 5px;
+}
+
+li {
+    cursor: pointer;
+}
+
+li:hover {
+    text-decoration: line-through;
+}
+</style>
+
 </head>
 <body>
 
 <h1 id="header">Change Me</h1>
 
 <input type="text" id="input" placeholder="Type something...">
-<button onclick="changeButton()" id="changeButton">Change Header</button>
+
+<button onclick="changeButton()">Change</button>
+<button onclick="toggleDarkMode()">Dark Mode</button>
 <button onclick="resetAll()">Reset</button>
 
-<input type="text" id="outcome" placeholder="Results..." readonly>
+<input type="text" id="outcome" readonly placeholder="Results...">
+
 <p id="counter">Characters: 0</p>
 
-<h3>History</h3>
+<h3>History (click to reuse)</h3>
 <ul id="history"></ul>
 
 <script>
 
-function changeButton(){
+let editingIndex = null;
 
-    let header = document.getElementById("header");       
+// Load saved data
+window.onload = function() {
+    let saved = JSON.parse(localStorage.getItem("history")) || [];
+    saved.forEach(addToHistoryUI);
+};
+
+// MAIN FUNCTION
+function changeButton() {
+
+    let header = document.getElementById("header");
     let input = document.getElementById("input");
-    let outcome = document.getElementById("outcome");
-    let history = document.getElementById("history");
-
     let text = input.value.trim();
 
-     // ❗ validation
-    if (text === "") {
-        alert("Please type something first!");
-        return;
+    if (text === "") return;
+
+    header.textContent = text;
+    document.getElementById("outcome").value = text;
+
+    addToHistory(text);
+    input.value = "";
+    updateCounter();
+}
+
+// ADD TO HISTORY
+function addToHistory(text) {
+    let history = JSON.parse(localStorage.getItem("history")) || [];
+
+    if (editingIndex !== null) {
+        history[editingIndex] = text;
+        editingIndex = null;
+    } else {
+        history.push(text);
     }
 
-        // change header
-    header.textContent = text;
+    localStorage.setItem("history", JSON.stringify(history));
+    renderHistory();
+}
 
-    // output box
-    outcome.value = text;
+// RENDER HISTORY
+function renderHistory() {
+    let history = JSON.parse(localStorage.getItem("history")) || [];
+    let list = document.getElementById("history");
+    list.innerHTML = "";
 
-    // add to history list
+    history.forEach((item, index) => {
+        addToHistoryUI(item, index);
+    });
+}
+
+// CREATE UI ITEM
+function addToHistoryUI(text, index) {
     let li = document.createElement("li");
     li.textContent = text;
-    history.appendChild(li);
 
+    // click to reuse (edit mode)
+    li.onclick = function() {
+        document.getElementById("input").value = text;
+        editingIndex = index;
+    };
 
-      // clear input
-    input.value = "";
+    // right click to delete
+    li.oncontextmenu = function(e) {
+        e.preventDefault();
+        deleteItem(index);
+    };
 
-    // update counter
-    document.getElementById("counter").textContent = "Characters: 0";
-
-   
-
-
+    document.getElementById("history").appendChild(li);
 }
+
+// DELETE ITEM
+function deleteItem(index) {
+    let history = JSON.parse(localStorage.getItem("history")) || [];
+    history.splice(index, 1);
+    localStorage.setItem("history", JSON.stringify(history));
+    renderHistory();
+}
+
+// RESET
+function resetAll() {
+    localStorage.removeItem("history");
+    document.getElementById("header").textContent = "Change Me";
+    document.getElementById("outcome").value = "";
+    document.getElementById("history").innerHTML = "";
+}
+
+// DARK MODE
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+}
+
+// CHARACTER COUNTER
+document.getElementById("input").addEventListener("input", updateCounter);
+
+function updateCounter() {
+    let count = document.getElementById("input").value.length;
+    document.getElementById("counter").textContent = "Characters: " + count;
+}
+
+// ENTER KEY SUPPORT
+document.getElementById("input").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        changeButton();
+    }
+});
+
+</script>
+
+</body>
+</html>
