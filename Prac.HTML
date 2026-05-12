@@ -29,3 +29,9 @@ function changeButton(){
     let history = document.getElementById("history");
 
     let text = input.value.trim();
+
+     // ❗ validation
+    if (text === "") {
+        alert("Please type something first!");
+        return;
+    }
