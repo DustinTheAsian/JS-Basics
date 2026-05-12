@@ -6,30 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <h1 id="header">Change Me</h1>
 
-    <input type="text" id="input" placeholder="Type something...">
-    <button onclick = "changeButton()" id="changeButton">Change Header</button>
-    <input type="text" id="outcome" placeholder="Results...">
+<h1 id="header">Change Me</h1>
 
-    <script>
+<input type="text" id="input" placeholder="Type something...">
+<button onclick="changeButton()" id="changeButton">Change Header</button>
+<button onclick="resetAll()">Reset</button>
 
-        function changeButton(){
-
-    let header = document.getElementById("header");        
-    let input = document.getElementById("input");
-    let changeButton = document.getElementById("changeButton");
-    let outcome = document.getElementById("outcome");
-
-        header.textContent = input.value;
-
-            outcome.value = input.value;
-
-        }
-
-   
-    </script>
-
-</body>
-</html>
+<input type="text" id="outcome" placeholder="Results..." readonly>
