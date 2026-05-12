@@ -35,3 +35,17 @@ function changeButton(){
         alert("Please type something first!");
         return;
     }
+
+        // change header
+    header.textContent = text;
+
+    // output box
+    outcome.value = text;
+
+    // add to history list
+    let li = document.createElement("li");
+    li.textContent = text;
+    history.appendChild(li);
+
+
+}
