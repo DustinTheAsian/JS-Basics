@@ -1,156 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Advanced Header App</title>
-
-<style>
-body.dark {
-    background: #1e1e1e;
-    color: white;
-}
-
-button {
-    margin: 5px;
-}
-
-li {
-    cursor: pointer;
-}
-
-li:hover {
-    text-decoration: line-through;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
 
-<h1 id="header">Change Me</h1>
+    <h1 id="bigText">hello World</h1>
 
-<input type="text" id="input" placeholder="Type something...">
+    <input id="first" type="text" placeholder="input something">
+    <button onclick = "changeText()">Change Text</button>
 
-<button onclick="changeButton()">Change</button>
-<button onclick="toggleDarkMode()">Dark Mode</button>
-<button onclick="resetAll()">Reset</button>
+    
+    <script>
 
-<input type="text" id="outcome" readonly placeholder="Results...">
+        function changeText(){
+            let header = document.getElementById("bigText");
+            let input = document.getElementById("first");
 
-<p id="counter">Characters: 0</p>
+            header.textContent = input.value;
 
-<h3>History (click to reuse)</h3>
-<ul id="history"></ul>
+        }
 
-<script>
-
-let editingIndex = null;
-
-// Load saved data
-window.onload = function() {
-    let saved = JSON.parse(localStorage.getItem("history")) || [];
-    saved.forEach(addToHistoryUI);
-};
-
-// MAIN FUNCTION
-function changeButton() {
-
-    let header = document.getElementById("header");
-    let input = document.getElementById("input");
-    let text = input.value.trim();
-
-    if (text === "") return;
-
-    header.textContent = text;
-    document.getElementById("outcome").value = text;
-
-    addToHistory(text);
-    input.value = "";
-    updateCounter();
-}
-
-// ADD TO HISTORY
-function addToHistory(text) {
-    let history = JSON.parse(localStorage.getItem("history")) || [];
-
-    if (editingIndex !== null) {
-        history[editingIndex] = text;
-        editingIndex = null;
-    } else {
-        history.push(text);
-    }
-
-    localStorage.setItem("history", JSON.stringify(history));
-    renderHistory();
-}
-
-// RENDER HISTORY
-function renderHistory() {
-    let history = JSON.parse(localStorage.getItem("history")) || [];
-    let list = document.getElementById("history");
-    list.innerHTML = "";
-
-    history.forEach((item, index) => {
-        addToHistoryUI(item, index);
-    });
-}
-
-// CREATE UI ITEM
-function addToHistoryUI(text, index) {
-    let li = document.createElement("li");
-    li.textContent = text;
-
-    // click to reuse (edit mode)
-    li.onclick = function() {
-        document.getElementById("input").value = text;
-        editingIndex = index;
-    };
-
-    // right click to delete
-    li.oncontextmenu = function(e) {
-        e.preventDefault();
-        deleteItem(index);
-    };
-
-    document.getElementById("history").appendChild(li);
-}
-
-// DELETE ITEM
-function deleteItem(index) {
-    let history = JSON.parse(localStorage.getItem("history")) || [];
-    history.splice(index, 1);
-    localStorage.setItem("history", JSON.stringify(history));
-    renderHistory();
-}
-
-// RESET
-function resetAll() {
-    localStorage.removeItem("history");
-    document.getElementById("header").textContent = "Change Me";
-    document.getElementById("outcome").value = "";
-    document.getElementById("history").innerHTML = "";
-}
-
-// DARK MODE
-function toggleDarkMode() {
-    document.body.classList.toggle("dark");
-}
-
-// CHARACTER COUNTER
-document.getElementById("input").addEventListener("input", updateCounter);
-
-function updateCounter() {
-    let count = document.getElementById("input").value.length;
-    document.getElementById("counter").textContent = "Characters: " + count;
-}
-
-// ENTER KEY SUPPORT
-document.getElementById("input").addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-        changeButton();
-    }
-});
-
-</script>
-
+    </script>
+    
 </body>
 </html>
