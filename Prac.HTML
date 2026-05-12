@@ -14,3 +14,18 @@
 <button onclick="resetAll()">Reset</button>
 
 <input type="text" id="outcome" placeholder="Results..." readonly>
+<p id="counter">Characters: 0</p>
+
+<h3>History</h3>
+<ul id="history"></ul>
+
+<script>
+
+function changeButton(){
+
+    let header = document.getElementById("header");       
+    let input = document.getElementById("input");
+    let outcome = document.getElementById("outcome");
+    let history = document.getElementById("history");
+
+    let text = input.value.trim();
