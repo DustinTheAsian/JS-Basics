@@ -4,27 +4,43 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;  /* horizontal center */
-    align-items: center;      /* vertical center */
+    justify-content: center;
+    align-items: center;
 }
 
-.Container{
-    height: 50px;
-    margin: 0 auto;
+.Container {
     background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-     align-items: center;
-      display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.Btn{
+.Btn {
     background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 40px;
+    border-radius: 5px;
+}
+
+.Btn:hover {
+    background-color: #0056b3;
+}
+
+.Ls {
+    margin: 0;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
